@@ -1,0 +1,29 @@
+$padding-div: 15px 10px
+$black: #222
+$primary-font: Helvetica, sans-serif
+$primary-color: #c3005e
+
+div
+    width: 50%
+    margin: 0 auto
+    text-align: center
+    border-radius: 10px
+    // chamando um pré-definição ja feita chamando pelo cifrão-$
+    padding: $padding-div
+    background: $black
+    font-family: $primary-font
+    border: 1px solid black
+
+    // Como o P está dentro da div, colocamos igual como se fosse o css
+    p
+        color: $primary-color
+
+    // para fazer o hover do elemento ultilizamos &
+    &:hover
+        background: transparent
+        p 
+            color: black
+
+p
+    color: gray
+    

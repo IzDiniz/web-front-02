@@ -1,0 +1,29 @@
+@mixin zero-config($margin, $padding) {
+    margin: $margin;
+    padding: $padding;
+}
+@mixin div-size($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+//---------------------------------------------------------------------------------------------------\\
+
+body {
+    @include zero-config(0, 0);
+}
+
+.container{
+    @include div-size(80%, 100vh);
+    margin: 0 auto;
+    background-color: #e7e7e7;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .box{
+        @include div-size(300px, 200px);
+        background-color: purple;
+    }
+}
