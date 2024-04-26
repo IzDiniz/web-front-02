@@ -1,0 +1,57 @@
+// @mixin define uma constante para deixar o css mais fácil
+
+@mixin zero-config($margin, $padding) {
+    margin: $margin;
+    padding: $padding;
+}
+@mixin div-size($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+@mixin div-style($bgColor: #d43aff) {
+    background-color: $bgColor;
+}
+
+// Definindo display flex fixo:
+@mixin flex-config($direction, $justify, $align-items) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align-items;
+}
+
+// Centralização pelo position:
+@mixin relative-center(){
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//---------------------------------------------------------------------------------------------------\\
+
+body {
+    @include zero-config(0, 0);
+}
+
+// Centralizar com Display Flex
+.container{
+    @include div-size(80%, 100vh);
+    @include div-style(#e7e7e7);
+
+    // centralizando com flex:
+    // @include flex-config(row, center, center);
+
+    margin: 0 auto;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+
+    .box{
+        @include div-size(300px, 200px);
+        @include div-style();
+        @include relative-center();
+    }
+}
+
